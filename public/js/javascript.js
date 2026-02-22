@@ -415,7 +415,7 @@ $(() => {
             ${info}
 
             <div class="mb-3">
-              <span class="badge badge-success">Рейтинг ${d.AverageRating || '0.0'} </span>
+              <span class="badge badge-success">Рейтинг ${d.AverageRating || "0.0"} </span>
               ${d.HasSubtitles ? '<span class="badge badge-info me-1">Субтитры</span>' : ""}
               ${d.HasAudio ? '<span class="badge badge-success me-1">Озвука</span>' : ""}
               ${d.AssignLanguage === 1 ? '<span class="badge badge-primary me-1">РЖЯ</span>' : ""}
@@ -436,7 +436,7 @@ $(() => {
       if (d == 1) {
         // Фильм / Сериал
         return `<div class="form-group wide">
-          <label>Директор</label>
+          <label>Режиссёр</label>
           <input type="text" name="director" required placeholder="Например: Дюна 2" />
         </div>
 
@@ -474,8 +474,13 @@ $(() => {
 
         <div class="form-group wide">
           <label>Уровень</label>
-          <input type="text" name="level" required placeholder="Например: Начинающий" />
-        </div>
+          <select name="level" required>
+            <option value="">Выберите тип</option>
+            <option value="Начинающий">Начинающий</option>
+            <option value="Средный">Средный</option>
+            <option value="Сложный">Сложный</option>
+          </select>
+          </div>
 
         <div class="form-group wide">
           <label>Автор</label>
