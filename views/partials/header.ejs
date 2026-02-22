@@ -1,0 +1,46 @@
+<header class="main-header py-3">
+  <div class="container header-container">
+    <!-- Логотип -->
+    <div class="header-logo">
+      <a href="/">
+        <img
+          src="images/logMBlight.png"
+          alt="Логотип MB.DEAF"
+          width="220"
+          height="auto"
+        />
+      </a>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="header-nav" id="headerNav">
+      <ul class="nav-list">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/films">Фильмотека</a></li>
+        <li><a href="/books">Книги</a></li>
+        <li><a href="/courses">Курсы</a></li>
+        <li><a href="/forum">Форум</a></li>
+        <li><a href="/resources">Ресурсы</a></li>
+        <li><a href="/recommendations">Рекомендации</a></li>
+        <% if (auth) { %><li><a href="/?q=add">Добавить</a></li>  <% } %>       
+      </ul>
+    </nav>
+
+    <!-- Правый блок: Вход, регистрация, контакт -->
+    <% if (auth) { %>
+    <nav class="header-nav" id="headerNav">
+      <ul class="nav-list">
+        <li><a href="/profile"><%= username %></a></li>
+        <li><a href="/logout">Выйти</a></li>
+      </ul>
+    </nav>
+    <% } else { %>
+      <!-- Кнопка для открытия модального окна -->
+      <div class="auth-trigger">
+        <button class="btn btn-primary full-width">
+          Войти / Зарегистрироваться
+        </button>
+      </div>
+    <% } %> 
+  </div>
+</header>

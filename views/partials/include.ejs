@@ -1,0 +1,61 @@
+
+
+<div id="reviewModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content" style="max-width: 600px;">
+    <button class="modal-close">&times;</button>
+    <h3>Отзывы</h3>
+    <div id="reviewsList" style="margin: 1rem 0; min-height: 100px;">
+      Загрузка...
+    </div>
+
+    <!-- Форма добавления отзыва (если пользователь авторизован) -->
+    <% if (auth) { %>
+    <form id="addReviewForm" class="review-form">
+      <input type="hidden" id="contentIdInput">
+
+      <!-- Оценка -->
+      <div class="form-group">
+        <label for="ratingInput">Оценка:</label>
+        <select id="ratingInput" class="form-control" required>
+          <option value="">Выберите оценку</option>
+          <option value="5">⭐⭐⭐⭐⭐ Отлично</option>
+          <option value="4">⭐⭐⭐⭐ Хорошо</option>
+          <option value="3">⭐⭐⭐ Средне</option>
+          <option value="2">⭐⭐ Плохо</option>
+          <option value="1">⭐ Ужасно</option>
+        </select>
+      </div>
+
+      <!-- Текст отзыва -->
+      <div class="form-group">
+        <label for="textInput">Ваш отзыв:</label>
+        <textarea
+          id="textInput"
+          class="form-control"
+          rows="3"
+          placeholder="Поделитесь своим мнением о фильме, книге или курсе..."
+          required
+        ></textarea>
+      </div>
+
+      <!-- Кнопка -->
+      <button class="btn btn-warning">
+        Опубликовать отзыв
+      </button>
+    </form>
+    <% } else { %>
+    <p>Войдите, чтобы оставить отзыв.</p>
+    <% } %>
+  </div>
+</div>
+
+<div id="infoModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content" style="max-width: 600px;">
+    <button class="modal-close">&times;</button>
+    <% if (auth) { %>
+      <div class="html">Загрузка . . . </div>
+    <% } else { %>
+      <p>Войдите, чтобы оставить отзыв.</p>
+    <% } %>
+  </div>
+</div>

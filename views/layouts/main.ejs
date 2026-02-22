@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+
+    <!-- Подключаем наш чистый CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Подключаем JS (если нужно) -->
+    <script src="/js/jquery.js" defer></script>
+    <script src="/js/javascript.js" defer></script>
+
+    <!-- Передаём данные из EJS в JS -->
+    <script>
+      window.initialData = {
+        title: "<%= title %>",
+        searchTimeout: null,
+        pole: "<%= pole %>",
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <%- include('../partials/header') %>
+
+    <!-- Основной контент -->
+    <div class="containerAll">
+      <!-- Основной контент страницы -->
+      <%- body %>
+    </div>
+
+    <!-- Дополнительные включения (например, модальные окна) -->
+    <%- include('../partials/include') %>
+    <!-- Боковая панель (Войти или Регистрация) -->
+    <%- include('../partials/lr') %>
+
+    <!-- Футер -->
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+
+<% if (query.q == 'add') { %>
+<!-- Форма добавить контент -->
+<section id="add" class="py-5">
+  <div class="addBox">
+    <h1 class="texth1 text-center mb-4">Добавить свой доступный контент</h1>
+    <form class="form-grid" id="addContentForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Тип контента</label>
+        <select name="type" required>
+          <option value="">Выберите тип</option>
+          <option value="1">Фильм / Сериал</option>
+          <option value="2">Книга</option>
+          <option value="3">Учебный курс</option>
+        </select>
+      </div>
+
+      <div class="form-group wide setHtml">
+      </div>
+
+      <div class="form-group wide">
+        <label>Название</label>
+        <input type="text" name="title" placeholder="Например: Дюна 2" required />
+      </div>
+
+      <div class="form-group wide">
+        <label>Ссылка (YouTube, PDF, сайт)</label>
+        <input type="url" name="url" placeholder="https://..." />
+      </div>
+
+      <div class="form-group wide">
+        <label>Описание (необязательно)</label>
+        <textarea name="description" rows="10" placeholder="Расскажите, о чём контент..."></textarea>
+      </div>
+
+      <div class="form-group wide">
+        <label>Элементы доступности</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="hasSubtitles" value="1" /> Субтитры</label>
+          <label><input type="checkbox" name="hasSignLanguage" value="1" /> Жестовый перевод</label>
+          <label><input type="checkbox" name="hasAudio" value="1" /> Озвучка</label>
+        </div>
+      </div>
+
+      <div class="form-group wide">
+        <label>Обложка</label>
+        <input 
+          type="file" 
+          name="coverImage" 
+          accept="image/*" 
+          class="form-control" required
+        />
+        <small class="text-muted">Разрешены: JPG, PNG, WEBP. Максимум 5 МБ.</small>
+      </div>
+
+      <div class="form-group wide">
+        <button type="submit" class="btn btn-primary btn-full-width">
+          Отправить на модерацию
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+<% } else { %>
+
+<!-- Поиск по типу контента -->
+<section class="search-block">
+  <div class="search-container">
+    <h2 class="texth1 mb-5 text-center">Поиск по каталогу</h2>
+    <div class="search-grid jc">
+      <!-- Тип контента -->
+      <div class="form-group">
+        <label class="form-label">Тип контента</label>
+        <select class="form-select" required id="filterType" name="category">
+          <option value="all">Все типы</option>
+          <option value="film">Фильмы / Сериалы</option>
+          <option value="book">Книги</option>
+          <option value="course">Курсы</option>
+        </select>
+      </div>
+
+      <!-- Поисковый запрос -->
+      <div class="form-group">
+        <label class="form-label">Название</label>
+        <input required type="text" name="search" class="form-control" id="searchQuery" placeholder="Введите название или слово...">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="catalog" class="py-5">
+  <h1 class="texth1 mb-5 text-center">Популярный доступный контент</h1>
+  <div class="row">
+    <% if (data.is) { %>
+      <% data.get.forEach((d) => { %>
+        <% if (d.IDFilm) {%><%- include('./card/films', {d}) %>
+        <% } else if (d.IDBook) {%><%- include('./card/books', {d}) %>
+        <% } else if (d.IDCourse) {%><%- include('./card/courses', {d}) %><% } %>
+      <% }) %>
+    <% } %>
+  </div>
+</section>
+
+<% } %>

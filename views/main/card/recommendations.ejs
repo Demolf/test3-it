@@ -1,0 +1,15 @@
+<div class="col infoModel">
+  <div class="card h-100">
+    <img src="images/<%= d.img %>" class="card-img-top" alt="Интерстеллар" />
+    <div class="card-body">
+      <h5><%= d.Title %></h5>
+      <div class="description"><span class="blod mright">Описание:</span> <%= d.Description %></div>
+      <% if (d.HasAudio) { %><span class="badge badge-success">Озвучка ✓</span><%} %>
+      <% if (d.AssignLanguage) { %><span class="badge badge-success">РЖЯ ✓</span><%} %>
+      <% if (d.HasSubtitles) { %><span class="badge badge-success">Субтитры ✓</span><%} %>
+      <% if (d.easyRead) { %><span class="badge badge-success">Легко читаемый ✓</span><%} %>
+      <br />
+      <div class="btn btn-warning openInfo" data-id="<%= d.IDRecommendation %>" data-type="recommendations"> Подробнее </div>
+    </div>
+  </div>
+</div>

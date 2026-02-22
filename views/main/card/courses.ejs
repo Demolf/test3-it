@@ -1,0 +1,38 @@
+
+<div class="col infoModel">
+<div class="card h-100">
+    <% if (d.CoverImage) { %>
+      <img src="/images/<%= d.CoverImage %>" class="card-img-top" alt="#">
+      <% } else { %>
+        <div class="resource-icon">🎓</div>;
+      <% } %>
+    <div class="card-body">
+        <h5> <%= d.Title %></h5>
+      <div class="description"><span class="blod mright">Описание:</span> <%= d.Description %></div>
+        <span class="badge badge-success">Рейтинг <%= d.AverageRating %> </span>
+        <% if (d.HasAudio) { %><span class="badge badge-success">Озвучка ✓</span><%} %>
+        <% if (d.AssignLanguage) { %><span class="badge badge-success">РЖЯ ✓</span><%} %>
+        <% if (d.HasSubtitles) { %><span class="badge badge-success">Субтитры ✓</span><%} %>
+        <div class="disex jc">
+            <div class="btn btn-warning openInfo" data-id="<%= d.IDCourse %>" data-type="courses">
+                Подробнее
+            </div>
+            <div data_type="films" class="btn btn-primary openReview" data-id="<%= d.IDContent %>">
+                Отзыв
+            </div>
+        </div>
+      <% if (pole == 1) { %>
+        <div class="mt-3">
+          <div class="disex jc">
+            <div class="Edit atext" data-id="<%= d.IDContent %>" data-type="books">
+              Редактировать
+            </div>
+            <div class="Delete atext" data-id="<%= d.IDContent %>" data-type="books">
+              Удалить
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+</div>
+</div>

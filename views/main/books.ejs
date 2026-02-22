@@ -1,0 +1,14 @@
+<section class="py-5">
+  <div class="container">
+    <h1 class="texth1 mb-4">Каталог книг</h1>
+    <p class="lead text-center mb-5">
+      Библиотека адаптированных электронных изданий с возможностью чтения
+      текстов, озвученных голосом, и просмотром иллюстративного материала.
+    </p>
+    <div class="row">
+      <% data.get.forEach(d => {%>
+          <%- include('./card/books', {d}) %>
+      <%}) %>
+    </div>
+  </div>
+</section>

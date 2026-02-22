@@ -1,0 +1,54 @@
+
+
+<!-- Модальное окно: Вход / Регистрация -->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+
+    <!-- Вкладки -->
+    <div class="tabs">
+      <button class="tab active" data-tab="modal-login">Войти</button>
+      <button class="tab" data-tab="modal-register">Регистрация</button>
+    </div>
+
+    <!-- Форма входа -->
+    <div class="tab-content" id="modal-login">
+      <form id="loginForm">
+        <input
+          type="text"
+          id="lusername"
+          placeholder="Имя пользователя"
+          required
+        />
+        <input type="password" id="lpassword" placeholder="Пароль" required />
+        <button ензу="submit" class="btn btn-primary full-width">Войти</button>
+      </form>
+    </div>
+
+    <!-- Форма регистрации -->
+    <div class="tab-content" id="modal-register" style="display: none">
+      <form id="registerForm">
+        <input type="email" id="remail" placeholder="Email" required />
+        <input
+          type="text"
+          id="rusername"
+          placeholder="Имя пользователя"
+          required
+        />
+        <input type="text" id="rname" placeholder="Ваше имя" required />
+        <input type="password" id="rpassword" placeholder="Пароль" required />
+        <input
+          type="password"
+          id="rpassword2"
+          placeholder="Подтвердите пароль"
+          required
+        />
+        <button ензу="submit" class="btn btn-primary full-width">
+          Зарегистрироваться
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script></script>

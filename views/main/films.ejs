@@ -1,0 +1,15 @@
+<section class="py-5">
+  <div class="container">
+    <h1 class="texth1 mb-4">Фильмотека</h1>
+    <p class="lead text-center mb-5">
+      Коллекция фильмов и сериалов с высококачественными субтитрами и вариантами
+      просмотра с синхронным сопровождением жестового перевода.
+    </p>
+
+    <div class="row">
+      <% data.get.forEach((d) => { %>
+          <%- include('./card/films', {d}) %>
+      <% }) %>
+    </div>
+  </div>
+</section>

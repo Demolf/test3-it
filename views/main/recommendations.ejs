@@ -1,0 +1,16 @@
+<section class="py-5">
+  <div class="container">
+    <h1 class="texth1 mb-4">Рекомендации специально для тебя</h1>
+    <p class="lead text-center mb-5">
+      Подборки контента на основе твоих предпочтений, оценок и тегов доступности
+      (субтитры, ЖЯ, озвучка).
+    </p>
+
+    <!-- Секция рекомендаций -->
+    <div class="row">        
+      <% data.get.forEach((d) => { %>
+          <%- include('./card/recommendations', {d}) %>
+      <% }) %>
+    </div>
+  </div>
+</section>
