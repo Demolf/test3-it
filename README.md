@@ -231,6 +231,11 @@ SELECT * FROM courses cr JOIN content c ON cr.IDContent = c.IDContent
   или [https://www.apachefriends.org/] - phpMyAdmin
 - npm (менеджер пакетов Node)
 
+### После установки MySQL
+
+- Импорт в MySQL 
+- В папке название test.sql
+
 ### Шаги установки
 
 1. **Клонируйте репозиторий**:
