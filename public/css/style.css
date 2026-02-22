@@ -316,7 +316,7 @@ body {
 
 .card img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -345,6 +345,12 @@ body {
 
 .card-body p {
   color: #555;
+}
+
+
+
+.recommendation img{
+  height: 220px;
 }
 
 /* Бейджи */
